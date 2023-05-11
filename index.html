@@ -6,8 +6,8 @@
     <script src="script.js"></script>
     <title>Etch-A-Sketch</title>
 </head>
-<body>
-    <div><img class="settings" height="64px" width="64px" src="https://media.giphy.com/media/jQ8sGUX6xYTfchDsCw/giphy.gif"/></div>
+<body ondragstart="return false;" ondrop="return false;" >
+    <div onclick="enableSettings()" id="settings"><img class="settings" height="64px" width="64px" src="https://media.giphy.com/media/jQ8sGUX6xYTfchDsCw/giphy.gif"/></div>
     <section class="etch-board">  
     </section>
 </body>
