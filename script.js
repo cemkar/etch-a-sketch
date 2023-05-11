@@ -2,6 +2,7 @@
     when the program loads in it will grab the etch-board and create pixels within the board
 */
 var DOCUMENT_TIMER;
+var RAINBOW_MODE;
 window.onload = function() {
     generatePixels((1/32)*100);
     
@@ -56,7 +57,16 @@ function clear() {
 // function that changes the background color
 function etch(element, size)
 {
-    element.style.backgroundColor = "#141414";
+    if(RAINBOW_MODE)
+    {
+        //generates a random color
+        element.style.backgroundColor =
+          "#" + (((1 << 24) * Math.random()) | 0).toString(16).padStart(6, "0");
+    }
+    else {
+        element.style.backgroundColor = "#141414";
+    }
+    
 }
 
 
@@ -103,8 +113,8 @@ function enableSettings() {
             <button onclick="generatePixels(1.56); clear();">64x64</button>
         </div>
         <div class="menuSettings">
-            <button>Black & White</button>
-            <button>Rainbow Mode</button>
+            <button onclick="RAINBOW_MODE=false">Black & White</button>
+            <button onclick="RAINBOW_MODE=true">Rainbow Mode</button>
         </div>
         
     `;
