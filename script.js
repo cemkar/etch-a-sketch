@@ -102,6 +102,10 @@ function enableSettings() {
             <button onclick="generatePixels(3.25); clear();">32x32</button>
             <button onclick="generatePixels(1.56); clear();">64x64</button>
         </div>
+        <div class="menuSettings">
+            <button>Black & White</button>
+            <button>Rainbow Mode</button>
+        </div>
         
     `;
 
